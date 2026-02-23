@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sarika Singh | Portfolio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<section id="home" class="hero">
+<h1>👩‍💻 Sarika Singh</h1>
+<p>🎓 FYIT Student | 💻 Aspiring Front-End Developer</p>
+<a href="resume.pdf" download class="btn">📄 Download Resume</a>
+</section>
+
+<section id="about">
+<div class="card">
+<h2>About Me</h2>
+<p>
+My name is Sarika Singh. I am currently learning Web Development,
+with a focus on Front-End Development.
+I am continuously improving my skills in HTML, CSS, and JavaScript.
+</p>
+<p>
+I am passionate about building attractive and user-friendly websites.
+My goal is to become a skilled Front-End Developer
+and work in a reputed IT company in the future.
+</p>
+
+<p><strong>Course:</strong> FYIT</p>
+<p><strong>Subject:</strong> Web Designing</p>
+<p><strong>College:</strong> R. K. Talreja College of Arts, Science & Commerce</p>
+<p><strong>Academic Year:</strong> 2025–26</p>
+<p><strong>Project Title:</strong> Portfolio with Modal Popup Contact Form</p>
+</div>
+</section>
+
+<section id="skills">
+<h2>🚀 Skills</h2>
+<div id="skills-container"></div>
+</section>
+
+<section id="projects">
+<h2>📂 Projects</h2>
+<div id="projects-container"></div>
+</section>
+
+<section id="contact">
+<div class="card">
+<h2>📞 Contact Details</h2>
+<p>📱 WhatsApp: <a href="https://wa.me/919152325824" target="_blank">9152325824</a></p>
+<p>📸 Instagram: <a href="https://www.instagram.com/sarikaaa.2715?igsh=M2l5aDQ4dngxYnB1" target="_blank">
+@sarikaaa.2715</a></p>
+<p>📧 Email: <a href="mailto:Sarikasingh27102007@gmail.com">Sarikasingh27102007@gmail.com</a></p>
+
+<button class="btn" onclick="openModal()">Open Contact Form</button>
+</div>
+</section>
+
+<!-- Modal -->
+<div class="modal" id="contactModal">
+<div class="modal-content">
+<span class="close" onclick="closeModal()">×</span>
+<h3>Send Message</h3>
+<input type="text" placeholder="Your Name">
+<input type="email" placeholder="Your Email">
+<textarea placeholder="Your Message"></textarea>
+<button class="btn">Submit</button>
+</div>
+</div>
+
+<a href="https://wa.me/919152325824" target="_blank" class="whatsapp-float">💬</a>
+
+<script src="script.js"></script>
+</body>
+</html>
