@@ -1,32 +1,17 @@
-function openModal(){
-document.getElementById("contactModal").style.display="flex";
-}
+const skillsContainer = document.getElementById("skills-container");
 
-function closeModal(){
-document.getElementById("contactModal").style.display="none";
-}
+skillsContainer.innerHTML = ""; // Clear first
 
-/* Load Skills */
-fetch("skills.json")
-.then(res=>res.json())
-.then(data=>{
-let container=document.getElementById("skills-container");
-data.skills.forEach(skill=>{
-container.innerHTML+=`<div class="card">${skill}</div>`;
-});
-});
+const skills = [
+"HTML",
+"CSS",
+"JavaScript",
+"Responsive Design"
+];
 
-/* Load Projects */
-fetch("project.json")
-.then(res=>res.json())
-.then(data=>{
-let container=document.getElementById("projects-container");
-data.projects.forEach(project=>{
-container.innerHTML+=`
-<div class="card">
-<h3>${project.name}</h3>
-<p>${project.description}</p>
-<p><strong>Technologies:</strong> ${project.tech}</p>
-</div>`;
-});
+skills.forEach(skill => {
+let div = document.createElement("div");
+div.classList.add("card");
+div.innerHTML = `<h3>${skill}</h3>`;
+skillsContainer.appendChild(div);
 });
