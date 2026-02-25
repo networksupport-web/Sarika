@@ -55,12 +55,12 @@ display:block;
 }
 
 .small-profile{
-width:80px;
-height:80px;
+width:50px;
+height:50px;
 border-radius:50%;
 object-fit:cover;
-border:3px solid #00e5ff;
-box-shadow:0 0 15px #00e5ff;
+border:2px solid #00e5ff;
+box-shadow:0 0 10px #00e5ff;
 }
 
 .card{
@@ -115,3 +115,4 @@ font-size:20px;
 height:30px;
 margin-top:5px;
 }
+
