@@ -34,29 +34,29 @@ function showMessage(e){
     document.getElementById("successMsg").style.display="block";
 }
 
-/* Load Projects */
-fetch("./projects.json")
-.then(res=>{
-    if(!res.ok){
-        throw new Error("Projects file not found");
-    }
-    return res.json();
-})
-.then(data=>{
-    if(!Array.isArray(data)){
-        throw new Error("JSON format incorrect");
-    }
+/* PROJECTS DIRECT ADD */
+document.addEventListener("DOMContentLoaded", function(){
 
-    const container=document.getElementById("projectsContainer");
-    container.innerHTML="";
+    const projects = [
+        "Portfolio Website (HTML, CSS)",
+        "Simple Calculator (JavaScript)",
+        "To-Do List App",
+        "Login Form UI",
+        "Landing Page Design",
+        "Responsive Navbar",
+        "Image Gallery",
+        "Weather App",
+        "Basic Blog Website",
+        "Business Website UI"
+    ];
 
-    data.forEach(project=>{
-        const div=document.createElement("div");
-        div.className="project";
-        div.textContent=project;
+    const container = document.getElementById("projectsContainer");
+
+    projects.forEach(project=>{
+        const div = document.createElement("div");
+        div.className = "project";
+        div.textContent = project;
         container.appendChild(div);
     });
-})
-.catch(err=>{
-    console.log("Project loading error:",err);
+
 });
