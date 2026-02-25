@@ -1,9 +1,5 @@
-{
-  "projects": [
-    {
-      "name": "Portfolio with Modal Popup Contact Form",
-      "description": "This project is a personal portfolio website designed to showcase my skills, projects, and contact information. It includes a responsive design and a modal popup contact form.",
-      "tech": "HTML5, CSS3, JavaScript, Bootstrap"
-    }
-  ]
-}
+[
+"Portfolio Website",
+"Landing Page Design",
+"Business Website UI"
+]
