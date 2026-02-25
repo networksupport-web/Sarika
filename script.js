@@ -1,41 +1,52 @@
-function openModal() {
-  document.getElementById("contactModal").style.display = "flex";
+function showSection(id){
+document.querySelectorAll('.section').forEach(sec=>{
+sec.classList.remove('active');
+});
+document.getElementById(id).classList.add('active');
 }
 
-function closeModal() {
-  document.getElementById("contactModal").style.display = "none";
+/* Typing Effect */
+const texts=["Web Developer","UI Designer","Creative Coder"];
+let count=0;
+let index=0;
+
+(function type(){
+let currentText=texts[count];
+let letter=currentText.slice(0,++index);
+document.getElementById("typing").textContent=letter;
+
+if(letter.length===currentText.length){
+count++;
+index=0;
+if(count===texts.length){count=0;}
+setTimeout(type,1000);
+}else{
+setTimeout(type,100);
+}
+})();
+
+/* Success Message */
+function showMessage(e){
+e.preventDefault();
+document.getElementById("successMsg").style.display="block";
 }
 
 /* Load Skills */
 fetch("skills.json")
-  .then(response => response.json())
-  .then(data => {
-    const container = document.getElementById("skills-container");
-    container.innerHTML = ""; // clear before adding
-
-    data.skills.forEach(skill => {
-      const div = document.createElement("div");
-      div.className = "card";
-      div.textContent = skill;
-      container.appendChild(div);
-    });
-  });
+.then(res=>res.json())
+.then(data=>{
+let container=document.getElementById("skillsContainer");
+data.forEach(skill=>{
+container.innerHTML+=`<div class="skill">${skill}</div>`;
+});
+});
 
 /* Load Projects */
-fetch("project.json")
-  .then(response => response.json())
-  .then(data => {
-    const container = document.getElementById("projects-container");
-    container.innerHTML = "";
-
-    data.projects.forEach(project => {
-      const div = document.createElement("div");
-      div.className = "card";
-      div.innerHTML = `
-        <h3>${project.name}</h3>
-        <p>${project.description}</p>
-        <p><strong>Technologies:</strong> ${project.tech}</p>
-      `;
-      container.appendChild(div);
-    });
-  });
+fetch("projects.json")
+.then(res=>res.json())
+.then(data=>{
+let container=document.getElementById("projectsContainer");
+data.forEach(project=>{
+container.innerHTML+=`<div class="project">${project}</div>`;
+});
+});
